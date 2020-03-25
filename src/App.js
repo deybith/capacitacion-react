@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+
+  const [nombre, setNombre] = useState('')
+  const [apellido, setApellido] = useState('')
+
+  const handlerChange = (e) => {
+    let value = e.target.value;
+    if (e.target.id == 'nombre')
+      setNombre(value);
+    else if (e.target.id == 'apellido')
+      setApellido(value);
+  }
+
+   return <div> 
+
+    <input id='nombre' value={nombre} onChange={handlerChange} />
+    <input id='apellido' value={apellido} onChange={handlerChange} />
+
+   </div>
 }
-
-export default App;
