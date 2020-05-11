@@ -1,22 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import Articles from "./containers/Articles"
+import AddArticle from "./components/AddArticle/AddArticle";
+import ArticleProvider from "./context/articleContext";
+import Label from "./components/Label/Label";
+import Button from "./components/Button/Button";
+
 
 export default function App() {
-
-  const [nombre, setNombre] = useState('')
-  const [apellido, setApellido] = useState('')
-
-  const handlerChange = (e) => {
-    let value = e.target.value;
-    if (e.target.id == 'nombre')
-      setNombre(value);
-    else if (e.target.id == 'apellido')
-      setApellido(value);
-  }
+   
 
    return <div> 
+      <ArticleProvider>
+         <AddArticle />
+         <Articles />
+         <Button />
+      </ArticleProvider>
 
-    <input id='nombre' value={nombre} onChange={handlerChange} />
-    <input id='apellido' value={apellido} onChange={handlerChange} />
+
+
+      {/* <Label>
+         asdasdasdasdasda asdsadas
+         <div>
+            asdasdasdasd asd asdasd
+         </div>
+      </Label> */}
 
    </div>
 }
