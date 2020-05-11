@@ -6,7 +6,7 @@ const initialState = {
 }
 
 export default  (state= initialState, {type , Cliente}) => {
-    if(type === ActionTypes.CLIENTE){
+    if (type === ActionTypes.CLIENTE) {
 	    return Object.assign({}, state, {
 	    	...Cliente
 	    })

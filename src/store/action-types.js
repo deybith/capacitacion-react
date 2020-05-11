@@ -1,1 +1,3 @@
 export const CLIENTE = 'CLIENTE'
+export const ADDARTICLE = 'ADDARTICLE'
+export const CLEARARTICLES = 'CLEARARTICLES'

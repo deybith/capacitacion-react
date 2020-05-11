@@ -2,7 +2,12 @@ import React, { useState, useContext } from "react";
 //import "./AddArticle.css";
 import { ArticleContext } from "../../context/articleContext";
 
-const AddArticle = () => {
+import {addArticle} from '../../store/actions'
+
+import {connect} from 'react-redux';
+
+const AddArticle = (props) => {
+
     const { saveArticle } = useContext(ArticleContext);
     const [article, setArticle] = useState();
 
@@ -15,7 +20,8 @@ const AddArticle = () => {
 
     const addNewArticle = e => {
         e.preventDefault();
-        saveArticle(article);
+        //saveArticle(article); //////// asdasdasdasd
+        props.dispatchArticle(article);
     };
 
     return (
@@ -36,4 +42,11 @@ const AddArticle = () => {
         </form>
     );
 };
-export default AddArticle;
+
+
+
+const dispatchMapToProps = (dispatch) => ({
+    dispatchArticle: (article) => dispatch(addArticle(article))
+})
+
+export default connect(null, dispatchMapToProps)(AddArticle);

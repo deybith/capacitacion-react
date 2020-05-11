@@ -6,3 +6,11 @@ export const cliente = (cliente) => {
 		Cliente: cliente
 	}
 }
+
+
+export const addArticle = (article) => {
+	return {
+		type: actionTypes.ADDARTICLE,
+		article: article
+	}
+}

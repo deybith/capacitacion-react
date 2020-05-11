@@ -25,5 +25,5 @@ const store = configureStore({
   middleware,
   devTools: false,
 })
-persistStore(store)
+//persistStore(store)
 export default store
